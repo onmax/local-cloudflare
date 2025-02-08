@@ -1,0 +1,18 @@
+{
+  "name": "nimiq-core-cloudflare",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "wrangler dev"
+  },
+  "keywords": [],
+  "author": "",
+  "devDependencies": {
+    "wrangler": "^3.107.3"
+  },
+  "dependencies": {
+    "@nimiq/core": "^2.0.6"
+  }
+}
