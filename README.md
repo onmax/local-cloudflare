@@ -8,6 +8,21 @@ pnpm install # or uninstall pnpm-lock.yaml and run npm/yarn install
 pnpm dev # npm run dev or yarn dev
 ```
 
+## WASM in Cloudflare
+
+As explainned in [this comment](https://github.com/nimiq/core-rs-albatross/issues/3277#issuecomment-2646614887)
+
+> Cloudflare workers WASM support works quite different. When you import a wasm file, they already give it to you as a Module.
+
+> However, the /web export of the core library has a default export, which is the init function, that can take a precompiled module.
+
+```ts
+import mod from '@nimiq/core/web/main-wasm/index.wasm'
+import init, {PublicKey} from '@nimiq/core/web'
+
+await init(mod)
+```
+
 Open the browser and navigate to `http://localhost:8787` to make the request, then you will see the following error:
 
 ```
